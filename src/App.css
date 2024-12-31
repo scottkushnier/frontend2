@@ -1,0 +1,165 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* no a-type decoration for react router links */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* some positional specs to be used on pages */
+
+.spacer {
+  height: 7px;
+}
+
+.indent {
+  margin-left: 34px;
+}
+
+.list-indent {
+  margin-left: 54px;
+}
+
+.horz-spacer {
+  width: 100px;
+  height: 20px;
+  display: inline-block;
+}
+
+.button-indent {
+  position: relative;
+  left: 47px;
+}
+
+/* spacing between company & job cards */
+
+.companylist-li + .companylist-li {
+  margin-top: 5px;
+}
+
+.joblist-li + .joblist-li {
+  margin-top: -35px;
+}
+
+.applyButton {
+  background-color: rgb(174, 202, 240);
+  position: relative;
+  left: 470px;
+  bottom: 42px;
+}
+
+.applyButton:hover {
+  background-color: rgb(108, 162, 238);
+}
+
+.applied {
+  background-color: #eee;
+  color: #888;
+  left: 460px;
+  border-color: #888;
+}
+
+.button-readonly {
+  pointer-events: none;
+}
+
+/* for company & job listings */
+
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 500px;
+  margin: 15px;
+  padding: 5px;
+}
+
+.companycard {
+  background-color: #ffd;
+}
+
+.companycard:hover {
+  background-color: rgb(243, 243, 56);
+}
+
+.jobcard {
+  background-color: rgb(228, 238, 253);
+}
+
+.description {
+  font-style: italic;
+  font-size: small;
+}
+
+.navbar {
+  background-color: #555;
+  height: 30px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-li a {
+  display: inline;
+  text-align: left;
+  text-decoration: none;
+  padding: 15px;
+  color: white;
+  position: relative;
+  top: 7px;
+}
+
+.navbar-li + .navbar-li {
+  margin-top: 0px;
+}
+
+/* highlight on navbar to show what page we're on */
+.highlight a {
+  color: rgb(243, 243, 56);
+}
+
+.user-input input {
+  margin: 5px;
+}
+
+.readonly {
+  background-color: #ddd;
+  color: #666;
+}
+
+table {
+  position: relative;
+  left: 45px;
+}
+
+tr {
+  height: 30px;
+}
+
+/* messages on submit, with success or error */
+
+.error {
+  background-color: pink;
+  color: darkred;
+  line-height: 25px;
+  width: 500px;
+  text-align: center;
+}
+
+.message {
+  background-color: rgb(192, 255, 195);
+  color: rgb(0, 139, 30);
+  line-height: 25px;
+  width: 500px;
+  text-align: center;
+}
