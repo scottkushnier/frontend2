@@ -10,6 +10,7 @@ function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const [error, setError] = useState("");
+  const [msg, setMsg] = useState("");
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -21,6 +22,8 @@ function Signup() {
 
   const submit = (e) => {
     e.preventDefault();
+    setMsg("working ...");
+    setError("");
     JoblyApi.registerNewUser(formData)
       .then(({ token }) => {
         // console.log("submit: token: ", token);
@@ -126,6 +129,11 @@ function Signup() {
       {error ? (
         <div className="error">
           <h4> {error} </h4>
+        </div>
+      ) : null}{" "}
+      {msg ? (
+        <div className="message">
+          <h4> {msg} </h4>
         </div>
       ) : null}
     </>

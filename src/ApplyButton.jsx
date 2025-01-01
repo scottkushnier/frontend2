@@ -5,7 +5,11 @@ import JoblyApi from "./api.js";
 
 function clickOnJobId(id, user, token) {
   JoblyApi.registerJobApply(user.username, id, token);
-  user.applications.push(id);
+  if (user.applications) {
+    user.applications.push(id);
+  } else {
+    user.applications = [id];
+  }
   // console.log("user now: ", user);
   // don't need to update localStorage here,
   // user appl. details re-read on job listing pages
