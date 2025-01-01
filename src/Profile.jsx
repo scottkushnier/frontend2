@@ -35,7 +35,6 @@ function Profile() {
     setTimeout(() => {
       setMessage("");
     }, 5000);
-    // nice future enchancement to make msg go away after some time (~ 15sec.)
   };
   return (
     <>

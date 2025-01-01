@@ -90,6 +90,7 @@ class JoblyApi {
 
   static async modUserProfile(username, token, data) {
     // console.log("patch ", username, token, data);
+    console.log("here in mod user profile");
     const result = await this.request(
       `users/${username}`,
       token,

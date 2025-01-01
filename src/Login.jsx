@@ -11,7 +11,6 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
-  // might be nice to enhance with timer to remove error message after being displayed for maybe 15 sec.
   const navigate = useNavigate();
   const setUser = useContext(UserContext).setUser;
 
