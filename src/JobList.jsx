@@ -20,7 +20,7 @@ function JobList() {
     JoblyApi.fetchUser(user.username, user.token).then(({ user }) => {
       setAppliedJobIds(() => user.applications);
     });
-  }, []);
+  }, [justApplied, user]); // figure out which jobs were applied to again - if user checks "just applied jobs" box
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -67,6 +67,8 @@ function JobList() {
                       <JobCard job={job} showCompany="true" applied={true} />
                     </li>
                   );
+                } else {
+                  return null;
                 }
               })
             : jobs.map((job) => {

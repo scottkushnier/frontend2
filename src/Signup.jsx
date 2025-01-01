@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import { useState, useContext } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserContext from "./UserContext";
 import JoblyApi from "./api.js";
 import { saveUser } from "./LocalStorage";
@@ -21,7 +21,6 @@ function Signup() {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log("submitted ", formData);
     JoblyApi.registerNewUser(formData)
       .then(({ token }) => {
         // console.log("submit: token: ", token);
@@ -32,8 +31,11 @@ function Signup() {
         navigate("/");
       })
       .catch((err) => {
-        console.log("error");
         setError(err[0]);
+        setTimeout(() => {
+          // remove error msg after a time
+          setError("");
+        }, 5000);
       });
   };
 
@@ -132,52 +134,3 @@ function Signup() {
 }
 
 export default Signup;
-
-{
-  /* 
-// <div className="user-input" style={{ marginLeft: "34px" }}> */
-}
-
-{
-  /* <br />
-            <label htmlFor="password">Password: </label>
-            <input
-              id="password"
-              type="password"
-              placeholder="abc123"
-              autoComplete="off"
-              // value={password}
-              onChange={handleChange}
-            ></input>
-            <br />
-            <label htmlFor="firstname">First Name: </label>
-            <input
-              id="firstname"
-              type="text"
-              placeholder="first name"
-              // value={password}
-              onChange={handleChange}
-            ></input>
-            <br />
-            <label htmlFor="lastname">Last Name: </label>
-            <input
-              id="lastname"
-              type="text"
-              placeholder="last name"
-              // value={password}
-              onChange={handleChange}
-            ></input>
-            <br />
-            <label htmlFor="email">Email: </label>
-            <input
-              id="email"
-              type="text"
-              placeholder="email"
-              // value={password}
-              onChange={handleChange}
-            ></input>
-            <br />
-            <div style={{ height: "7px" }}> </div>
-            <button onClick={submit}> Submit </button>
-          </div> */
-}

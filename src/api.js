@@ -3,6 +3,12 @@ import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://192.168.5.129:3001";
 // const BASE_URL = "http://192.168.5.129:3001";
 
+// async function delay(secs) {
+//   return new Promise((res) => {
+//     setTimeout(res, secs * 1000);
+//   });
+// }
+
 class JoblyApi {
   static async request(endpoint, token = null, data = {}, method = "get") {
     console.debug("API Call:", endpoint, data, method);
@@ -42,12 +48,8 @@ class JoblyApi {
     return res.company;
   }
 
-  static async fetchUsers() {
-    const users = await this.request("users");
-    // console.log(users);
-  }
-
   static async fetchUser(username, token) {
+    // await delay(5);
     const userDetails = await this.request(`users/${username}`, token);
     // console.log(userDetails);
     return userDetails;
@@ -66,7 +68,7 @@ class JoblyApi {
   }
 
   static async registerNewUser(userDetails) {
-    console.log("register: ", userDetails);
+    // console.log("register: ", userDetails);
     const token = await this.request(
       "auth/register",
       null,

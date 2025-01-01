@@ -4,7 +4,9 @@ import UserContext from "./UserContext";
 import JoblyApi from "./api.js";
 
 function clickOnJobId(id, user, token) {
-  JoblyApi.registerJobApply(user, id, token);
+  JoblyApi.registerJobApply(user.username, id, token);
+  user.applications.push(id);
+  // console.log("user now: ", user);
   // don't need to update localStorage here,
   // user appl. details re-read on job listing pages
 }
@@ -17,7 +19,7 @@ function ApplyButton({ jobid, applied }) {
       <button
         className="applyButton"
         onClick={() => {
-          clickOnJobId(jobid, user.username, user.token);
+          clickOnJobId(jobid, user, user.token);
           setClicked(true);
         }}
       >

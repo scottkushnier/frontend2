@@ -17,7 +17,7 @@ function Profile() {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log("tgt: ", e.target.name, e.target.value, "data: ", formData);
+    // console.log("tgt: ", e.target.name, e.target.value, "data: ", formData);
     setFormData((formData) => ({
       ...formData,
       [e.target.name]: e.target.value,
@@ -27,7 +27,6 @@ function Profile() {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log("submit");
     user = { ...user, ...formData }; // merge new changes into user details & save back into context
     saveUser(user); // save new profile info in localStorage too
     setUser(user);

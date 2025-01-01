@@ -10,6 +10,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [msg, setMsg] = useState("");
   // might be nice to enhance with timer to remove error message after being displayed for maybe 15 sec.
   const navigate = useNavigate();
   const setUser = useContext(UserContext).setUser;
@@ -25,6 +26,8 @@ function Login() {
 
   const submit = (e) => {
     e.preventDefault();
+    setMsg("working ...");
+    setError("");
     // console.log("submitted ", username, " ", password);
     JoblyApi.fetchToken(username, password) // checks password here, error catched below if no good
       .then((ret) => {
@@ -39,8 +42,13 @@ function Login() {
         });
       })
       .catch((err) => {
-        console.log("error");
+        // console.log("error");
+        setMsg("");
         setError(err[0]);
+        setTimeout(() => {
+          // remove error msg after a time
+          setError("");
+        }, 5000);
       });
   };
 
@@ -74,6 +82,11 @@ function Login() {
           {error ? (
             <div className="error">
               <h4> {error} </h4>
+            </div>
+          ) : null}
+          {msg ? (
+            <div className="message">
+              <h4> {msg} </h4>
             </div>
           ) : null}
         </div>

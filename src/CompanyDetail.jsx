@@ -17,7 +17,7 @@ function CompanyDetail() {
       // console.log("appls: ", user.applications);
       setAppliedJobs(() => user.applications);
     });
-  }, []);
+  }, [user, handle]);
 
   if (company && appliedJobs) {
     return (
@@ -48,7 +48,7 @@ function CompanyDetail() {
       </>
     );
   } else {
-    return "Working...";
+    return <h2> "Working..." </h2>;
   }
 }
 
