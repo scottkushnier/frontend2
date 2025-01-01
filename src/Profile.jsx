@@ -32,6 +32,9 @@ function Profile() {
     setUser(user);
     JoblyApi.modUserProfile(user.username, user.token, formData);
     setMessage("Submitted.");
+    setTimeout(() => {
+      setMessage("");
+    }, 5000);
     // nice future enchancement to make msg go away after some time (~ 15sec.)
   };
   return (
