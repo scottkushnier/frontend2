@@ -14,10 +14,6 @@ li {
 
 /* some positional specs to be used on pages */
 
-.spacer {
-  height: 7px;
-}
-
 .indent {
   margin-left: 34px;
 }
@@ -26,13 +22,17 @@ li {
   margin-left: 54px;
 }
 
-.horz-spacer {
-  width: 100px;
-  height: 20px;
-  display: inline-block;
+.justappliedcheckbox {
+  margin-left: 100px;
 }
 
-.button-indent {
+.login-button {
+  margin-top: 10px;
+  position: relative;
+}
+
+.submit-button {
+  margin-top: 10px;
   position: relative;
   left: 47px;
 }
@@ -63,9 +63,6 @@ li {
   color: #888;
   left: 460px;
   border-color: #888;
-}
-
-.button-readonly {
   pointer-events: none;
 }
 

@@ -77,8 +77,9 @@ function Login() {
             onChange={handleChangePassword}
           ></input>
           <br />
-          <div className="spacer"> </div>
-          <button onClick={submit}> Submit </button>
+          <button className="login-button" onClick={submit}>
+            Submit
+          </button>
           {error ? (
             <div className="error">
               <h4> {error} </h4>

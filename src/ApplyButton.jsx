@@ -27,9 +27,7 @@ function ApplyButton({ jobid, applied }) {
       </button>
     );
   } else {
-    return (
-      <button className="applyButton applied button-readonly">Applied</button>
-    );
+    return <button className="applyButton applied">Applied</button>;
   }
 }
 

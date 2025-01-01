@@ -48,14 +48,14 @@ function JobList() {
               value={searchTerm}
               onChange={handleChange}
             ></input>
-            <div className="horz-spacer"></div>
             <input
+              className="justappliedcheckbox"
               id="justapplied"
               type="checkbox"
               value={justApplied}
               onChange={handleCheck}
             ></input>
-            <label htmlFor="justapplied"> Show only if applied </label>
+            <label htmlFor="justapplied">Applied jobs only</label>
           </div>
         </form>
         <ul className="joblist-ul">

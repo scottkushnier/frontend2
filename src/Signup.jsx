@@ -119,8 +119,7 @@ function Signup() {
             </tr>
           </tbody>
         </table>
-        <div className="spacer"> </div>
-        <button className="button-indent" onClick={submit}>
+        <button className="submit-button" onClick={submit}>
           Submit
         </button>
       </form>
