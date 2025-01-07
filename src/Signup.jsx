@@ -35,6 +35,7 @@ function Signup() {
       })
       .catch((err) => {
         setError(err[0]);
+        setMsg("");
         setTimeout(() => {
           // remove error msg after a time
           setError("");
